@@ -374,9 +374,9 @@ GameObject:
   - component: {fileID: -4280343618092741809}
   - component: {fileID: -898767380050694298}
   - component: {fileID: 2620670835986578069}
-  - component: {fileID: 828405875065148705}
-  - component: {fileID: 5126811305132718450}
-  - component: {fileID: 8966613439453765511}
+  - component: {fileID: -131283806412461687}
+  - component: {fileID: -8756169072048224375}
+  - component: {fileID: 3632748173339474612}
   m_Layer: 5
   m_Name: Card
   m_TagString: Untagged
@@ -478,7 +478,7 @@ MonoBehaviour:
   IsPlayerCard: 1
   CardInfo: {fileID: -898767380050694298}
   CardMovement: {fileID: 2620670835986578069}
-  Ability: {fileID: 8966613439453765511}
+  Ability: {fileID: 3632748173339474612}
 --- !u!114 &-898767380050694298
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -518,7 +518,19 @@ MonoBehaviour:
   DefaultParent: {fileID: 0}
   DefaultGameCardParent: {fileID: 0}
   isDraggable: 0
---- !u!114 &828405875065148705
+--- !u!114 &-131283806412461687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2850848671909355232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d317c9f1e1a5db48b403dda8ed549f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-8756169072048224375
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -530,19 +542,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d5383cc4d833854eaa191a8dc317cbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &5126811305132718450
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2850848671909355232}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d317c9f1e1a5db48b403dda8ed549f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &8966613439453765511
+--- !u!114 &3632748173339474612
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
