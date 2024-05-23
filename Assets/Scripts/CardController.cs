@@ -99,28 +99,28 @@ public class CardController : MonoBehaviour
         {
             case Card.SpellType.DEBUFF_CARD_DAMAGE:
                 target.Card.Attack = Mathf.Clamp(target.Card.Attack - Card.SpellValue, 0, int.MaxValue);
-                CardInfo.RefreshData();
+                target.CardInfo.RefreshData();
                 break;
 
             case Card.SpellType.BUFF_CARD_DAMAGE:
                 target.Card.Attack += Card.SpellValue;
-                CardInfo.RefreshData();
+                target.CardInfo.RefreshData();
                 break;
 
             case Card.SpellType.DAMAGE_ENEMY_CARD:
                 GiveDamageTo(target, Card.SpellValue);
-                CardInfo.RefreshData();
+                target.CardInfo.RefreshData();
                 break;
 
             case Card.SpellType.SHIELD_ON_ALLY_CARD:
-                if (target.Card.Abilities.Exists(x => x == Card.AbilityType.SHIELD))
+                if (!target.Card.Abilities.Exists(x => x == Card.AbilityType.SHIELD))
                     target.Card.Abilities.Add(Card.AbilityType.SHIELD);
-                CardInfo.RefreshData();
+                target.CardInfo.RefreshData();
                 break;
 
             case Card.SpellType.HEAL_ALLY_CARD:
-                target.Card.Defense -= Card.SpellValue;
-                CardInfo.RefreshData();
+                target.Card.Defense += Card.SpellValue;
+                target.CardInfo.RefreshData();
                 break;
 
             case Card.SpellType.DAMAGE_ENEMY_FIELD_CARDS:
@@ -129,7 +129,6 @@ public class CardController : MonoBehaviour
                     new List<CardController>(GameManager.PlayerFieldCards);
                 foreach (var card in enemyCards)
                     GiveDamageTo(card, Card.SpellValue);
-                CardInfo.RefreshData();
                 break;
 
             case Card.SpellType.DAMAGE_ENEMY_HERO:
@@ -160,11 +159,13 @@ public class CardController : MonoBehaviour
                 GameManager.ShowHP();
 
                 break;
+
             case Card.SpellType.PROVACATION_ON_ALLY_CARD:
-                if (target.Card.Abilities.Exists(x => x == Card.AbilityType.PROVACATION))
+                if (!target.Card.Abilities.Exists(x => x == Card.AbilityType.PROVACATION))
                     target.Card.Abilities.Add(Card.AbilityType.PROVACATION);
-                CardInfo.RefreshData();
+                target.CardInfo.RefreshData();
                 break;
+
 
         }
         if (target)
